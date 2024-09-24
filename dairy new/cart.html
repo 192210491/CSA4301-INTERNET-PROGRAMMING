@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Ko-Matha Dairy Farm</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ko-Matha Dairy Farm - Cart</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="cart.html">Cart</a> <span id="cart-count">(0)</span></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div> <!-- Cart Items will be loaded here -->
+        <div id="cart-total"></div> <!-- Cart Total Price -->
+
+        <button onclick="clearCart()">Clear Cart</button> <!-- Option to clear cart -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ko-Matha Dairy Farm</p>
+    </footer>
+
+    <script src="scripts.js"></script> <!-- Link to JavaScript -->
+</body>
+</html>

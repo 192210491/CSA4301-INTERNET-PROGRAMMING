@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Ko-Matha Dairy Farm</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ko-Matha Dairy Farm - Admin</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="admin-dashboard">
+        <h2>Admin Dashboard</h2>
+        <form id="stock-entry">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product-name">
+            
+            <label for="product-stock">Stock Quantity:</label>
+            <input type="number" id="product-stock" name="product-stock">
+            
+            <button type="button" onclick="addStock()">Add Stock</button>
+        </form>
+
+        <div id="stock-list">
+            <h3>Stock List</h3>
+            <ul id="stock-items"></ul>
+        </div>
+    </section>
+
+    <script>
+        let stock = [];
+
+        function addStock() {
+            let name = document.getElementById('product-name').value;
+            let quantity = document.getElementById('product-stock').value;
+            stock.push({name: name, quantity: quantity});
+            updateStockList();
+        }
+
+        function updateStockList() {
+            let stockList = document.getElementById('stock-items');
+            stockList.innerHTML = '';
+            stock.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = ${item.name}: ${item.quantity};
+                stockList.appendChild(li);
+            });
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Ko-Matha Dairy Farm</p>
+    </footer>
+</body>
+</html>
